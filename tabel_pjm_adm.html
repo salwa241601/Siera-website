@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard – Peminjaman Ruangan</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-+0sVnZ6E9GfsPShwRor1C3psBz/9xENnABQpR1x+YzFXeV1+3eQNZZlwOR0+jF+qkE/sDdZfPGvUy5eE0ZQ3yg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    :root {
+      --green-lightest: #eafbea;    
+      --green-light:    #d6f9c4;    
+      --green-mid:      #b9eacb;    
+      --green-lighter:  #a0e68a;    
+      --green-dark:     #0f3a15;    
+      --green-darker:   #174c29;    
+      --white:          #ffffff;
+      --red:            #d93025;    
+      --button-green:   #0f6c2c;    
+      --placeholder:    #a9a9a9;    
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: var(--green-light);
+      color: var(--green-dark);
+      line-height: 1.4;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+
+    header {
+      width: 100%;
+      background-color: var(--white);
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      margin-bottom: 25px; 
+    }
+    .header-left h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+    .header-left .date {
+      font-size: 0.9rem;
+      color: var(--green-dark);
+      opacity: 0.75;
+      margin-top: 4px;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .header-right i {
+      font-size: 1.3rem;
+      color: var(--green-dark);
+      cursor: pointer;
+    }
+    .header-right .username {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+    .header-right .avatar {
+      background-color: #ddd;
+      color: var(--green-dark);
+      font-weight: 600;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .greeting-box {
+      background-color: var(--green-mid);
+      border: 2px solid var(--green-dark);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .greeting-box h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--green-dark);
+    }
+    .greeting-box p {
+      font-size: 0.95rem;
+      color: var(--green-dark);
+      opacity: 0.85;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .card {
+      background-color: var(--white);
+      border: 2px solid var(--green-dark);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      height: 180px;
+    }
+    .card-body {
+      flex: 1;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-body h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--green-dark);
+    }
+    .card-body .info {
+      flex: 1;
+      font-size: 0.9rem;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .card-body .info p {
+      margin-bottom: 4px;
+    }
+    .card-footer {
+      text-align: right;
+    }
+    .btn {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .btn:hover {
+      opacity: 0.85;
+    }
+    .btn-booked {
+      background-color: var(--red);
+      color: var(--white);
+    }
+    .btn-order {
+      background-color: var(--button-green);
+      color: var(--white);
+    }
+
+    footer.dark-footer {
+      background-color: var(--green-darker);
+      color: var(--white);
+    }
+    .footer-container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 30px 20px 15px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .footer-section {
+      flex: 1;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-section h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--white);
+    }
+    .footer-contact-item i {
+      font-size: 1.1rem;
+      width: 20px;
+      text-align: center;
+    }
+
+    .footer-copy-bar {
+      background-color: black;
+      width: 100%;
+      text-align: center;
+      padding: 12px 0;
+      box-shadow: 0 -1px 4px rgba(0,0,0,0.05);
+    }
+    .footer-copy-bar .footer-copy {
+      max-width: 1024px;
+      margin: 0 auto;
+      font-size: 0.9rem;
+      color: white;
+      opacity: 0.75;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .header-right {
+        gap: 12px;
+      }
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-container {
+        padding: 20px 15px 10px;
+      }
+    }
+    @media (min-width: 641px) and (max-width: 900px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>Dashboard</h1>
+      <div class="date">Monday, 19 May 2025</div>
+    </div>
+    <div class="header-right">
+      <i class="fas fa-bars"></i>
+      <i class="fas fa-envelope"></i>
+      <i class="fas fa-bell"></i>
+      <span class="username">Zarakilla</span>
+      <div class="avatar">ZR</div>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="greeting-box">
+      <h2>Hallo, Admin</h2>
+      <p>Selamat datang di administrator ruang peminjaman!</p>
+    </section>
+
+    <section class="cards-grid">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+             alt="Foto Ruangan F2.1" />
+        <div class="card-body">
+          <div>
+            <h3>F2.1</h3>
+            <div class="info">
+              <p>Pesanan : dadang indarto</p>
+              <p>Tanggal : Senin, 19 Mei 2025</p>
+              <p>Waktu  : 14.30 - 16.10</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-booked">Terpesan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+             alt="Foto Ruangan GKM 4.1" />
+        <div class="card-body">
+          <div>
+            <h3>GKM 4.1</h3>
+            <div class="info">
+              <p>Pesanan : dadang indarto</p>
+              <p>Tanggal : Senin, 19 Mei 2025</p>
+              <p>Waktu  : 14.30 - 16.10</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-booked">Terpesan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+             alt="Foto Ruangan Theater Heuristic" />
+        <div class="card-body">
+          <div>
+            <h3>Theater Heuristic</h3>
+            <div class="info">
+              <p>Pesanan : dadang indarto</p>
+              <p>Tanggal : Senin, 19 Mei 2025</p>
+              <p>Waktu  : 14.30 - 16.10</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-booked">Terpesan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+             alt="Foto Ruangan G1.5" />
+        <div class="card-body">
+          <div>
+            <h3>G1.5</h3>
+            <div class="info">
+              <p>Pesanan : Zarakilla</p>
+              <p>Tanggal : Senin, 19 Mei 2025</p>
+              <p>Waktu  : 17.30 - 19.10</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-booked">Terpesan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+             alt="Foto Ruangan Lab Meta" />
+        <div class="card-body">
+          <div>
+            <h3>Lab Meta</h3>
+            <div class="info">
+              <p>Pesanan : Zarakilla</p>
+              <p>Tanggal : Senin, 19 Mei 2025</p>
+              <p>Waktu  : 17.30 - 19.10</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-booked">Terpesan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+             alt="Foto Ruangan Lab Robotiik" />
+        <div class="card-body">
+          <div>
+            <h3>Lab Robotiik</h3>
+            <div class="info">
+              <p>Pesanan : Zarakilla</p>
+              <p>Tanggal : Senin, 19 Mei 2025</p>
+              <p>Waktu  : 17.30 - 19.10</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-booked">Terpesan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+             alt="Foto Ruangan F4.10" />
+        <div class="card-body">
+          <div>
+            <h3>F4.10</h3>
+            <div class="info">
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-order">Pesan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+             alt="Foto Ruangan Aula Algoritma" />
+        <div class="card-body">
+          <div>
+            <h3>Aula Algoritma</h3>
+            <div class="info">
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-order">Pesan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+             alt="Foto Ruangan Lapangan Basket" />
+        <div class="card-body">
+          <div>
+            <h3>Lapangan Basket</h3>
+            <div class="info">
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-order">Pesan</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div> 
+
+  <footer class="dark-footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Kontak</h3>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+62 8123456789</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>siera@ub.ac.id</span>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Sosial Media</h3>
+        <div class="footer-contact-item">
+          <i class="fab fa-instagram"></i>
+          <span>@siera.siruangan</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="footer-copy-bar">
+    <div class="footer-copy">
+      © Copyright (c) Siera Teams 2025. All rights reserved.
+    </div>
+  </div>
+
+</body>
+</html>

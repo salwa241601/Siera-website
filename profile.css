@@ -1,0 +1,203 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header section */
+.header {
+    background: #f5f5f5;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-text {
+    font-size: 16px;
+    color: #aaa;
+}
+
+.top-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.date {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.user-icon {
+    background: #ccc;
+    border-radius: 50%;
+    padding: 6px 10px;
+    font-size: 14px;
+}
+
+/* Main container */
+.container {
+    background: #d6f5d6;
+    padding: 100px 110px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Profile Section */
+.profile-section {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-image {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.edit-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #d6f5d6;
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 16px;
+}
+
+/* Buttons */
+.message-btn {
+    background: #fff;
+    border: 2px solid #00aa00;
+    color: #00aa00;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.reset-btn {
+    background: #6c63ff;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.logout-btn {
+    background: #d62828;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Info Section */
+.info-section {
+    flex: 2;
+    min-width: 300px;
+}
+
+.info-section h2 {
+    font-size: 24px;
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 15px;
+}
+
+.info-item label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.info-item input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+}
+
+/* Action Buttons */
+.action-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.save-btn {
+    background: #00c853;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cancel-btn {
+    background: #d62828;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background: #004d00;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.footer-content div p {
+    margin: 5px 0;
+}
+

@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #d9f5cc;
+  color: #2d4c2f;
+}
+
+/* HEADER */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.title-date h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2d4c2f;
+}
+
+.title-date p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-avatar {
+  background-color: #ccc;
+  color: white;
+  border-radius: 50%;
+  padding: 0.5rem 0.75rem;
+  font-weight: bold;
+}
+
+/* FORM */
+main {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.forgot-wrapper {
+  width: 100%;
+  max-width: 420px;
+}
+
+.forgot-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 2px solid #3d6d35;
+}
+
+.forgot-card h2 {
+  margin-top: 0;
+  color: #2d4c2f;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.forgot-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+  border: 1px solid #aaa;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: #3d6d35;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 0.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #2f562a;
+}
+
+.back-login {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.back-login a {
+  color: #2d4c2f;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* FOOTER */
+footer {
+  background-color: #2e5233;
+  color: white;
+  padding: 2rem 1rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+footer h4 {
+  margin-top: 0;
+}
+
+.contact p, .social p {
+  margin: 0.3rem 0;
+}
+
+footer .copyright {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+}

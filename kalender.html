@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kalender Peminjaman Ruangan</title>
+  <link rel="stylesheet" href="kalender.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- BOX UTAMA SEMUA ELEMEN -->
+  <section class="calendar-wrapper">
+    <!-- HEADER -->
+    <div class="calendar-header">
+      <div class="nav-left">
+        <h2>Kalender Peminjaman Ruangan</h2>
+        <p>Monday, 19 May 2025</p>
+      </div>
+      <div class="nav-right">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-bell"></i>
+        <div class="profile">
+          <span class="name">Zaraakila</span>
+          <div class="avatar">ZR</div>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- PENCARIAN -->
+    <div class="search-box">
+      <input type="text" placeholder="Cari Ruangan">
+      <i class="fas fa-search"></i>
+    </div>
+
+    <!-- NAV BULAN -->
+    <div class="bulan-nav">
+      <i class="fas fa-chevron-left"></i>
+      <span>Juni</span>
+      <i class="fas fa-chevron-right"></i>
+    </div>
+
+    <!-- KALENDER -->
+    <table class="calendar-table">
+      <thead>
+        <tr>
+          <th>Senin</th>
+          <th>Selasa</th>
+          <th>Rabu</th>
+          <th>Kamis</th>
+          <th>Jum'at</th>
+          <th>Sabtu</th>
+          <th>Minggu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="disable">26</td>
+          <td class="disable">27</td>
+          <td class="disable">28</td>
+          <td class="disable">29</td>
+          <td class="disable">30</td>
+          <td>31</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+          <td>13</td>
+          <td>14</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>17</td>
+          <td>18</td>
+          <td>19</td>
+          <td>20</td>
+          <td>21</td>
+          <td>22</td>
+        </tr>
+        <tr>
+          <td>23</td>
+          <td>24</td>
+          <td>25</td>
+          <td>26</td>
+          <td>27</td>
+          <td>28</td>
+          <td>29</td>
+        </tr>
+        <tr>
+          <td class="schedule">
+            30
+            <div class="info">Gedung F F1.2<br>Algoritma</div>
+          </td>
+          <td class="schedule">
+            1
+            <div class="info">GKM Lt. 4<br>Lab Kom 1.5</div>
+          </td>
+          <td class="schedule">
+            2
+            <div class="info">Lab mm</div>
+          </td>
+          <td class="disable">3</td>
+          <td class="disable">4</td>
+          <td class="disable">5</td>
+          <td class="disable">6</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-column">
+          <p class="footer-title">Kontak</p>
+          <p><i class="fas fa-phone"></i> +62 8123456789</p>
+          <p><i class="fas fa-envelope"></i> siera@ub.ac.id</p>
+        </div>
+        <div class="footer-column">
+          <p class="footer-title">Sosial Media</p>
+          <p><i class="fab fa-instagram"></i> @siera.siruangan</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; Siera Teams 2025. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </section>
+
+</body>
+</html>

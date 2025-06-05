@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Login form di sebelah kiri -->
+    <div class="right-panel">
+      <h2>Sign In to Your Account</h2>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-google"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+      <div class="login-line"><span>Or use your email and password:</span></div>
+
+      <form class="form" action="dashboard.html" method="post">
+        <div class="input-box">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Email" required />
+        </div>
+
+        <div class="input-box">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Password" required />
+        </div>
+
+        <div class="checkbox">
+          <input type="checkbox" id="remember" />
+          <label for="remember">Remember me</label>
+        </div>
+
+        <button type="submit" class="btn submit">SIGN IN</button>
+
+        <div class="forgot-password">
+          <a href="forgot-password.html">Forgot your password?</a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Ajakan dan tombol sign up di sebelah kanan -->
+    <div class="left-panel">
+      <h2>Hello, Friend!</h2>
+      <p>Enter your personal details and start your journey with us</p>
+      <a href="register.html"><button class="btn">SIGN UP</button></a>
+    </div>
+
+  </div>
+</body>
+</html>

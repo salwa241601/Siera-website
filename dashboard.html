@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>SIERA Dashboard</title>
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+ <header class="main-header">
+  <div class="left-header">
+   <div class="logo-circle"></div>
+   <div class="logo-text">
+    <h1>SIERA</h1>
+    <p>Sistem Peminjaman Ruangan</p>
+   </div>
+   <div class="header-title">
+    <h2>Dashboard</h2>
+    <p>Monday, 19 May 2025</p>
+   </div>
+  </div>
+  <div class="right-header">
+    <span class="material-icons">💌</span>
+    <span class="material-icons">🔔</span>
+   <span class="username">Zarakilla</span>
+   <div class="avatar-circle">ZR</div>
+  <a href="profile.html" class="dropdown-link"><span class="dropdown-icon">▾</span></a>
+  </div>
+ </header>
+
+ <div class="layout">
+  <aside class="sidebar">
+   <div class="sidebar-top">
+    <button class="ajukan-btn">
+     <span>Ajukan<br />Peminjaman<br />Ruangan</span>
+     <div class="plus-circle">+</div>
+    </button>
+   </div>
+   <nav class="sidebar-menu">
+    <ul>
+     <li><a href="home.html">Home</a></li>
+     <li><a href="dashboard.html">Dashboard</a></li>
+     <li><a href="daftarruangan.html">Daftar<br />Ruangan</a></li>
+     <li><a href="daftarruangandipinjam.html">Daftar<br />Ruangan Dipinjam</a></li>
+     <li><a href="riwayat.html">Riwayat</a></li>
+     <li><a href="kalender.html">Calendar</a></li>
+    </ul>
+   </nav>
+  </aside>
+
+  <main class="dashboard-content">
+   <div class="content-card">
+    <div class="welcome-box">
+     <h2>Hi, <span class="username-highlight">Zarakilla</span></h2>
+     <p>Selamat Datang di SIERA (Sistem Peminjaman Ruangan) Fakultas Ilmu Komputer</p>
+    </div>
+
+    <div class="overview">
+     <p>Overview</p>
+     <div class="status-cards">
+      <div class="status-card">
+       <p>Pengajuan</p>
+       <h3>10</h3>
+      </div>
+      <div class="status-card">
+       <p>Dalam Proses</p>
+       <h3>8</h3>
+      </div>
+      <div class="status-card">
+       <p>Disetujui</p>
+       <h3>2</h3>
+      </div>
+      <div class="status-card">
+       <p>Selesai</p>
+       <h3>100</h3>
+      </div>
+     </div>
+    </div>
+   </div>
+
+      <div class="search-container">
+  <div class="search-tabs-container"> <div class="search-tabs-card"> <div class="tab-item active">Kelas</div>
+    <div class="separator"></div> <div class="tab-item">Aula</div>
+    <div class="separator"></div>
+    <div class="tab-item">Lapangan</div>
+    <div class="separator"></div>
+    <div class="tab-item">Lab</div>
+    <div class="separator"></div>
+    <div class="tab-item">Theater</div>
+  </div>
+</div>
+
+    <div class="search-box">
+     <h3>Apa Yang Sedang Dicari?</h3>
+     <div class="search-fields">
+      <div class="field">
+       <label>Ruangan :</label>
+       <input type="text" value="Gedung F2.1" readonly />
+      </div>
+      <div class="field">
+       <label>Tanggal Pinjam :</label>
+       <input type="text" value="2/6/2025" readonly />
+      </div>
+      <div class="field">
+       <label>Jam Pinjam :</label>
+       <input type="text" value="09.00 - 12.00" readonly />
+      </div>
+      <div class="field">
+       <label>Kapasitas :</label>
+       <input type="text" value="40 Orang" readonly />
+      </div>
+     </div>
+     <button class="search-button">Cari</button>
+    </div>
+   </div>
+
+   <div class="room-section">
+    <h2 class="section-title">Ruangan</h2>
+    <div class="room-grid">
+     <div class="room-card">
+      <div class="room-image"></div>
+      <p class="room-name">Gedung F</p>
+     </div>
+     <div class="room-card">
+      <div class="room-image"></div>
+      <p class="room-name">GKM<br><span class="subtext">(Gedung Kreativitas Mahasiswa)</span></p>
+     </div>
+     <div class="room-card">
+      <div class="room-image"></div>
+      <p class="room-name">Theater<br>Heuristic</p>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+
+ <footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-section contact">
+            <h3>Kontak</h3>
+            <p><img src="/gambar/gambartelpon.png" alt="Phone Icon" class="footer-icon"> +62 8123456789</p>
+            <p><img src="/gambar/gambaremail.png" alt="Mail Icon" class="footer-icon"> siera@ub.ac.id</p>
+        </div>
+        <div class="footer-section social-media">
+            <h3>Sosial Media</h3>
+            <p><img src="/gambar/gambarig.png" alt="Instagram Icon" class="footer-icon"> siera.siruangan</p>
+        </div>
+    </div>
+   
+</footer>
+ <div class="copyright">
+        <p>Copyright (c) Siera Teams 2025. All rights reserved.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,192 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #d9f5cc;
+  color: #2d4c2f;
+}
+
+header .topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.title-date h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2d4c2f;
+}
+
+.title-date p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-avatar {
+  background-color: #ccc;
+  color: white;
+  border-radius: 50%;
+  padding: 0.5rem 0.75rem;
+  font-weight: bold;
+}
+
+.welcome-box {
+  margin: 2rem;
+  padding: 1.5rem;
+  background-color: #c7f0a5;
+  border-radius: 1rem;
+  text-align: center;
+  border: 1px solid #4c7f45;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1.5rem;
+  padding: 2rem;
+  justify-items: center; 
+}
+
+.room-card {
+  width: 100%; 
+  max-width: 300px; 
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 3px solid #3d6d35;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.room-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.room-info {
+  padding: 1rem;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.status.red {
+  background-color: #f8d7da;
+  color: #d93025;
+  border: 1px solid #d93025;
+}
+
+.btn-pesan {
+  background-color: #3d6d35;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+footer {
+  background-color: #2e5233;
+  color: white;
+  padding: 2rem 1rem 1rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+footer h4 {
+  margin-top: 0;
+}
+
+.contact p, .social p {
+  margin: 0.3rem 0;
+}
+
+footer .copyright {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.greeting {
+  background-color: #d1f2c4;
+  padding: 1.5rem;
+  margin: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.requests {
+  margin: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  background-color: #b8e6b5;
+  border: 2px dashed #2f7037;
+  padding: 2rem;
+  border-radius: 15px;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card img {
+  width: 100px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.actions {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.detail {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.approve {
+  background-color: #28a745;
+  color: white;
+}
+
+.reject {
+  background-color: #dc3545;
+  color: white;
+}
